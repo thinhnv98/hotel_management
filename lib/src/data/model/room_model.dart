@@ -1,14 +1,14 @@
 import 'dart:convert';
 
 class Room {
-  final String id;
-  final String name;
-  final String subtitle;
-  final String description;
-  final String urlImage;
+  String id;
+  String name;
+  String subtitle;
+  String description;
+  String urlImage;
 
-  final String currentSession;
-  final int price;
+  String currentSession;
+  int price;
 
   Room({
     this.id,
@@ -19,6 +19,18 @@ class Room {
     this.currentSession,
     this.price,
   });
+  String get _id => id;
+
+  String get _name => name;
+
+  String get _subtitle => subtitle;
+
+  String get _description => description;
+
+  String get _urlImage => urlImage;
+
+  String get _currentSession => currentSession;
+
 
   Room copyWith({
     String id,

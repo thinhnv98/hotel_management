@@ -31,7 +31,7 @@ class _DetailChartState extends State<DetailChart> {
     dataList = [];
     int i = 0;
     widget.listServiceStatsModel.sort(
-      (a, b) => a.checkoutDate.compareTo(b.checkoutDate),
+          (a, b) => a.checkoutDate.compareTo(b.checkoutDate),
     );
     Map<String, Properties> servicesStats = {};
     widget.listServiceStatsModel.forEach((serviceStatsModel) {
@@ -69,7 +69,7 @@ class _DetailChartState extends State<DetailChart> {
       }
     });
     servicesStats.forEach(
-      (key, value) {
+          (key, value) {
         dataList.add(
           charts.Series<Properties, String>(
             id: key,
@@ -81,7 +81,7 @@ class _DetailChartState extends State<DetailChart> {
             fillColorFn: (_, __) => charts.ColorUtil.fromDartColor(value.color),
             data: [value],
             labelAccessorFn: (Properties value, _) =>
-                "${NumberFormat().format(value.price)} VNĐ",
+            "${NumberFormat().format(value.price)} VNĐ",
           ),
         );
       },
@@ -97,7 +97,7 @@ class _DetailChartState extends State<DetailChart> {
     }
     var size = MediaQuery.of(context).size;
     final currencyFormatter =
-        charts.BasicNumericTickFormatterSpec.fromNumberFormat(
+    charts.BasicNumericTickFormatterSpec.fromNumberFormat(
       NumberFormat.simpleCurrency(locale: "vi", decimalDigits: 0),
     );
     initData();
@@ -215,7 +215,7 @@ class _DetailChartState extends State<DetailChart> {
             barGroupingType: charts.BarGroupingType.stacked,
             primaryMeasureAxis: new charts.NumericAxisSpec(
               tickProviderSpec:
-                  new charts.BasicNumericTickProviderSpec(desiredTickCount: 4),
+              new charts.BasicNumericTickProviderSpec(desiredTickCount: 4),
               showAxisLine: true,
               tickFormatterSpec: currencyFormatter,
               renderSpec: new charts.SmallTickRendererSpec(

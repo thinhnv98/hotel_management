@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotel_management/helper.dart';
 import 'package:hotel_management/src/screens/home_screen/all_rooms_page.dart';
 import 'package:hotel_management/src/screens/receipt_screen/reciept_screen.dart';
+import 'package:hotel_management/src/screens/room_category_screen/room_category_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = "HOME";
@@ -49,6 +50,11 @@ class _HomeScreenState extends State<HomeScreen> {
             label: "Hóa đơn",
             icon: Icon(Icons.receipt),
           ),
+          BottomNavigationBarItem(
+              label: "DS Phòng",
+              icon: Icon(Icons.assignment)
+
+          ),
         ],
       ),
       backgroundColor: kBackgroundColor,
@@ -57,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           AllRoomsBuilder(),
           ReceiptScreenBuilder(),
+          RoomCategoricalScreen(),
         ],
         onPageChanged: (index) => _onPageChanged(index),
       ),
