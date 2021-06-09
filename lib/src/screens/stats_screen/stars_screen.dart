@@ -44,7 +44,7 @@ class _StatsScreenState extends State<StatsScreen> {
   void initData(List<RoomSession> roomSessions) {
     listServiceStatsModel = [];
     roomSessions.forEach(
-      (roomSession) {
+          (roomSession) {
         if (roomSession.end != null) {
           if (roomSession.end.compareTo(_startDay) != -1 &&
               roomSession.end.compareTo(_endDay) != 1) {
@@ -166,17 +166,17 @@ class _StatsScreenState extends State<StatsScreen> {
                               "Từ ngày: " +
                                   DateFormat("dd-MM-yyyy ").format(_startDay),
                               style: TextStyle(
-                                  //decoration: TextDecoration.underline,
-                                  ),
+                                //decoration: TextDecoration.underline,
+                              ),
                             ),
                           ],
                         ),
                         onTap: () async {
                           _startDay = await showDatePicker(
-                                  context: context,
-                                  initialDate: _startDay,
-                                  firstDate: DateTime(2015, 8),
-                                  lastDate: DateTime(2101)) ??
+                              context: context,
+                              initialDate: _startDay,
+                              firstDate: DateTime(2015, 8),
+                              lastDate: DateTime(2101)) ??
                               _startDay;
                           setState(() {});
                         },
@@ -193,18 +193,18 @@ class _StatsScreenState extends State<StatsScreen> {
                               "Đến ngày: " +
                                   DateFormat("dd-MM-yyyy ").format(_endDay),
                               style: TextStyle(
-                                  //color: Colors.blue,
-                                  //decoration: TextDecoration.underline,
-                                  ),
+                                //color: Colors.blue,
+                                //decoration: TextDecoration.underline,
+                              ),
                             ),
                           ],
                         ),
                         onTap: () async {
                           _endDay = await showDatePicker(
-                                  context: context,
-                                  initialDate: _endDay,
-                                  firstDate: DateTime(2015, 8),
-                                  lastDate: DateTime(2101)) ??
+                              context: context,
+                              initialDate: _endDay,
+                              firstDate: DateTime(2015, 8),
+                              lastDate: DateTime(2101)) ??
                               _endDay;
                           setState(() {});
                         },
@@ -296,7 +296,7 @@ class _StatsScreenState extends State<StatsScreen> {
                                   Center(
                                     child: Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.center,
                                       children: [
                                         CircularProgressIndicator(),
                                         SizedBox(

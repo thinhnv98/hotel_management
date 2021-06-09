@@ -8,7 +8,6 @@ class AuthFirebase {
   static final AuthFirebase _instance = AuthFirebase._privateConstructor();
 
   static AuthFirebase get instance => _instance;
-
   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   GoogleSignIn _googleSignIn = new GoogleSignIn(
     scopes: [
@@ -66,4 +65,5 @@ class AuthFirebase {
   Future sendPasswordResetEmail(String email) async {
     await _firebaseAuth.sendPasswordResetEmail(email: email);
   }
+
 }
